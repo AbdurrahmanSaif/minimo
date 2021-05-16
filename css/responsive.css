@@ -1,0 +1,124 @@
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 850px) {
+    .nav-sec ul li a {
+        padding: 10px 45px;
+    }
+}
+
+@media (max-width: 767px) {
+    .nav-sec ul li a {
+        padding: 10px 30px;
+    }
+    h2,
+    h4,
+    p {
+        text-align: center;
+    }
+    h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    h4 {
+        margin-bottom: 16px;
+    }
+    .blog-sec ul li {
+        margin-bottom: 40px;
+    }
+    .newsletter-sec {
+        padding: 40px 0;
+        margin-bottom: 40px;
+    }
+    .newsletter-form {
+        margin-top: 50px;
+    }
+    .loadmore-btn a {
+        font-size: 18px;
+        padding: 12px 22px;
+    }
+    header {
+        padding: 40px 0px;
+    }
+    .banner-sec {
+        margin-bottom: 40px;
+    }
+    .pd-sec-text {
+        margin-bottom: 30px;
+    }
+    .photodiary-sec {
+        margin-bottom: 40px;
+    }
+    footer {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .blog-sec ul li {
+        min-height: 0;
+    }
+    .nav-sec ul li a {
+        padding: 10px 15px;
+    }
+
+
+    .blog-sec ul {
+        margin: 0;
+    }
+    
+    .blog-sec ul li {
+        float: none;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+
+    .blog-img img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 479px) {
+    .nav-sec ul li a {
+        padding: 8px 8px;
+    }
+    .logo-sec {
+        float: none;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .nav-sec {
+        float: none;
+        width: 100%;
+    }
+    .nav-sec ul {
+        text-align: center;
+    }
+    .nav-sec ul li {
+        float: none;
+        display: inline-block;
+    }
+    .newsletter-form .block {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .footer-links {
+        float: none;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .footer-social {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    footer {
+        padding: 25px 0px;
+    }
+}
