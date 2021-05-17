@@ -114,7 +114,7 @@
       <div class="container">
         <h2>
           <script>
-            var news_ltr = "Sign up for our newsletter!";
+            var news_ltr = getNewsData();
             document.write(news_ltr);
           </script>
         </h2>
@@ -134,20 +134,7 @@
       <div class="container">
         <ul>
           <script>
-            var blog_sec2 = [
-              {
-                "blog_img": "images/blog-img1.jpg",
-                "about": "Lifestyle",
-                "heading": "More than just a music festival",
-                "paragraph": `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`
-              },
-              {
-                "blog_img": "images/blog-img2.jpg",
-                "about": "Lifestyle",
-                "heading": "Life tastes better with coffee",
-                "paragraph": `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`
-              },
-            ];
+            var blog_sec2 = getBlogSec2Data();
             var data = blog_sec2.map((blogSecData) => {
               return `<li class="blog-sec-li-margin">
                                   <div class="blog-img">

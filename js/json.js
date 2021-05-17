@@ -1,11 +1,11 @@
-function getLogoData(){
+function getLogoData() {
   return {
     image: "images/logo.png",
     url: "index.html",
-  }
+  };
 }
 
-function getNavData(){
+function getNavData() {
   return [
     {
       name: "Lifestyle",
@@ -26,13 +26,13 @@ function getNavData(){
   ];
 }
 
-function getBannerData(){
+function getBannerData() {
   return {
     banner_img: "images/banner1.jpg",
   };
 }
 
-function getPhotodiaryData(){
+function getPhotodiaryData() {
   return {
     about: "Photodiary",
     heading: "The perfect weekend getaway",
@@ -42,7 +42,7 @@ function getPhotodiaryData(){
   };
 }
 
-function getBlogSecData(){
+function getBlogSecData() {
   return [
     {
       blog_img: "images/blog-img1.jpg",
@@ -71,10 +71,23 @@ function getBlogSecData(){
   ];
 }
 
-function getNewsData(){
+function getNewsData() {
   return "Sign up for our newsletter!";
 }
 
-function getNewsData(){
-  return "Sign up for our newsletter!";
+function getBlogSec2Data() {
+  return [
+    {
+      blog_img: "images/blog-img1.jpg",
+      about: "Lifestyle",
+      heading: "More than just a music festival",
+      paragraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`,
+    },
+    {
+      blog_img: "images/blog-img2.jpg",
+      about: "Lifestyle",
+      heading: "Life tastes better with coffee",
+      paragraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`,
+    },
+  ];
 }
