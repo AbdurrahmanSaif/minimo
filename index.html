@@ -215,7 +215,15 @@
         </ul>
 
         <div class="loadmore-btn">
-          <a href="#">Load more</a>
+          <script>
+            var load_btn = {
+              "btnName" : "Load more",
+              "url" : "index.html"
+            };
+            var data = `<a href="${load_btn.url}">${load_btn.btnName}</a>`;
+            document.write(data);
+          </script>
+          
         </div>
         <!-- loadmore-btn  -->
 
