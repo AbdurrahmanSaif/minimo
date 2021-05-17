@@ -8,13 +8,15 @@
   <meta name="viewport" content="width=device-width, user-scalable=yes" />
 
   <title>Dynamic Layout</title>
+  
   <link rel="stylesheet" type="text/css" href="reset.css" />
 
   <link rel="stylesheet" type="text/css" href="fa-5.15.3/css/all.css" />
   <link rel="stylesheet" type="text/css" href="fa-5.15.3/js/all.js" />
-
+  
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+  <script src="js/json.js"></script>
 
 </head>
 
@@ -27,10 +29,7 @@
 
       <div class="logo-sec">
         <script>
-          var logo = {
-            "image": "images/logo.png",
-            "url": "index.html"
-          }
+          var logo = getLogoData();
           var data = `<a href="${logo.url}"><img src="${logo.image}" alt="" class="img-responsive"></a>`;
           document.write(data);
         </script>
@@ -39,24 +38,7 @@
       <div class="nav-sec">
         <ul>
           <script>
-            var nav = [
-              {
-                "name": "Lifestyle",
-                "url": "#"
-              },
-              {
-                "name": "Photodiary",
-                "url": "#"
-              },
-              {
-                "name": "Music",
-                "url": "#"
-              },
-              {
-                "name": "Travel",
-                "url": "#"
-              },
-            ];
+            var nav = getNavData();
             var data = nav.map((navData) => {
               return `<li><a href="#">${navData.name}</a></li>`
             });
@@ -275,16 +257,11 @@
           <li><a href="#"><i class="${footer_icons.icon3}"></i></a></li>`;
           document.write(data)
           </script>
-          
         </ul>
       </div>
-
     </div>
     <!-- container  -->
-
-
   </footer>
-
 </body>
 
 </html>
