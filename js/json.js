@@ -98,3 +98,25 @@ function getLoadBtnData() {
     url: "index.html",
   };
 }
+
+function getCopyrightData(){
+  return [
+    {
+      name: "Terms & Conditions",
+      url: "#",
+    },
+    {
+      name: "Policy",
+      url: "#",
+    },
+  ];
+}
+
+function getSocialIconsData(){
+  return {
+    heading: "Follow",
+    icon1: "fab fa-facebook-f",
+    icon2: "fab fa-twitter",
+    icon3: "fab fa-instagram",
+  };
+}
