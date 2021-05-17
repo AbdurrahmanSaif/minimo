@@ -185,7 +185,34 @@
     <div class="blog-sec blog-sec2">
       <div class="container">
         <ul>
-          <li class="blog-sec-li-margin">
+          <script>
+            var blog_sec2 = [
+              {
+                "blog_img": "images/blog-img1.jpg",
+                "about": "Lifestyle",
+                "heading": "More than just a music festival",
+                "paragraph": `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`
+              },
+              {
+                "blog_img": "images/blog-img2.jpg",
+                "about": "Lifestyle",
+                "heading": "Life tastes better with coffee",
+                "paragraph": `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`
+              },
+            ];
+            var data = blog_sec2.map((blogSecData) => {
+              return `<li class="blog-sec-li-margin">
+                                  <div class="blog-img">
+                                    <img src="${blogSecData.blog_img}" alt="" class="img-responsive">
+                                  </div>
+                                  <h4>${blogSecData.about}</h4>
+                                  <h2>${blogSecData.heading}</h2>
+                                  <p>${blogSecData.paragraph}</p>
+                                </li>`
+            });
+            document.write(data.join(""));
+          </script>
+          <!-- <li class="blog-sec-li-margin">
 
             <div class="blog-img">
               <img src="images/blog-img1.jpg" alt="" class="img-responsive">
@@ -216,7 +243,7 @@
               dolore magna
               aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
 
-          </li>
+          </li> -->
 
         </ul>
 
