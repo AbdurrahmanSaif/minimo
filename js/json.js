@@ -25,3 +25,9 @@ function getNavData(){
     },
   ];
 }
+
+function getBannerData(){
+  return {
+    banner_img: "images/banner1.jpg",
+  };
+}
