@@ -151,10 +151,7 @@
 
         <div class="loadmore-btn">
           <script>
-            var load_btn = {
-              "btnName": "Load more",
-              "url": "index.html"
-            };
+            var load_btn = getLoadBtnData();
             var data = `<a href="${load_btn.url}">${load_btn.btnName}</a>`;
             document.write(data);
           </script>

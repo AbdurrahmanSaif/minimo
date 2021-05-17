@@ -91,3 +91,10 @@ function getBlogSec2Data() {
     },
   ];
 }
+
+function getLoadBtnData() {
+  return {
+    btnName: "Load more",
+    url: "index.html",
+  };
+}
