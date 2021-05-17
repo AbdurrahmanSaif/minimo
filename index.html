@@ -101,12 +101,10 @@
                         <p>${photodiary.paragraph}</p>
                       </div>
                       <h4>${photodiary.message}</h4>`;
-                      document.write(data)
+          document.write(data)
         </script>
       </div>
       <!-- container -->
-
-
     </div>
     <!-- photodiary-sec -->
 
@@ -114,73 +112,46 @@
     <div class="blog-sec">
       <div class="container">
         <ul>
-          <li class="blog-sec-li-margin">
+          <script>
+            var blog_sec = [
+              {
+                "blog_img": "images/blog-img1.jpg",
+                "about": "Lifestyle",
+                "heading": "More than just a music festival",
+                "paragraph": `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`
+              },
+              {
+                "blog_img": "images/blog-img2.jpg",
+                "about": "Lifestyle",
+                "heading": "Life tastes better with coffee",
+                "paragraph": `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`
+              },
+              {
+                "blog_img": "images/blog-img3.jpg",
+                "about": "Lifestyle",
+                "heading": "American dream",
+                "paragraph": `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`
+              },
+              {
+                "blog_img": "images/blog-img4.jpg",
+                "about": "Lifestyle",
+                "heading": "A day exploring the Alps",
+                "paragraph": `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`
+              },
 
-            <div class="blog-img">
-              <img src="images/blog-img1.jpg" alt="" class="img-responsive">
-            </div>
-
-            <h4>Lifestyle</h4>
-
-            <h2>More than just a music festival</h2>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
-
-          </li>
-
-
-          <li>
-
-            <div class="blog-img">
-              <img src="images/blog-img2.jpg" alt="" class="img-responsive">
-            </div>
-
-            <h4>Lifestyle</h4>
-
-            <h2>Life tastes better with coffee</h2>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
-
-          </li>
-
-
-          <li class="blog-sec-li-margin">
-
-            <div class="blog-img">
-              <img src="images/blog-img3.jpg" alt="" class="img-responsive">
-            </div>
-
-            <h4>Lifestyle</h4>
-
-            <h2>American dream</h2>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
-
-          </li>
-
-
-          <li>
-
-            <div class="blog-img">
-              <img src="images/blog-img4.jpg" alt="" class="img-responsive">
-            </div>
-
-            <h4>Lifestyle</h4>
-
-            <h2>A day exploring the Alps</h2>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
-
-          </li>
-
+            ];
+            var data = blog_sec.map((blogSecData) => {
+              return `<li class="blog-sec-li-margin">
+                        <div class="blog-img">
+                          <img src="${blogSecData.blog_img}" alt="" class="img-responsive">
+                        </div>
+                        <h4>${blogSecData.about}</h4>
+                        <h2>${blogSecData.heading}</h2>
+                        <p>${blogSecData.paragraph}</p>
+                      </li>`
+            });
+            document.write(data.join(""));
+          </script>       
         </ul>
 
         <div class="clearfix"></div>
