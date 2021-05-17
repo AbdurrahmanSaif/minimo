@@ -151,7 +151,7 @@
                       </li>`
             });
             document.write(data.join(""));
-          </script>       
+          </script>
         </ul>
 
         <div class="clearfix"></div>
@@ -169,7 +169,7 @@
             var news_ltr = "Sign up for our newsletter!";
             document.write(news_ltr);
           </script>
-          </h2>
+        </h2>
         <div class="newsletter-form">
           <div class="block">
             <input type="text" placeholder="Enter a valid email address">
@@ -217,23 +217,19 @@
         <div class="loadmore-btn">
           <script>
             var load_btn = {
-              "btnName" : "Load more",
-              "url" : "index.html"
+              "btnName": "Load more",
+              "url": "index.html"
             };
             var data = `<a href="${load_btn.url}">${load_btn.btnName}</a>`;
             document.write(data);
           </script>
-          
         </div>
         <!-- loadmore-btn  -->
 
         <div class="clearfix"></div>
-
       </div>
       <!-- container  -->
     </div>
-
-
   </section>
   <!-- contents  -->
 
@@ -243,18 +239,43 @@
 
       <div class="footer-links">
         <ul>
-          <li><a href="#">Terms & Conditions</a></li>
-          <li><a href="#">Policy</a></li>
+          <script>
+            var copyright = [
+              {
+                "name": "Terms & Conditions",
+                "url": "#"
+              },
+              {
+                "name": "Policy",
+                "url": "#"
+              },
+            ];
+            var data = copyright.map((copyrightData) =>{
+              return `<li><a href="${copyrightData.url}">${copyrightData.name}</a></li>`;
+            });
+                document.write(data.join(""));
+          </script>
+          
         </ul>
       </div>
 
 
       <div class="footer-social">
         <ul>
-          <li>Follow</li>
-          <li><a href="#"><i class="fab fa-facebook-f"></i> </a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i> </a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i> </a></li>
+          <script>
+            var footer_icons = {
+              "heading" : "Follow",
+              "icon1" : "fab fa-facebook-f",
+              "icon2" : "fab fa-twitter",
+              "icon3" : "fab fa-instagram"
+            }
+            var data = `<li>${footer_icons.heading}</li>
+          <li><a href="#"><i class="${footer_icons.icon1}"></i></a></li>
+          <li><a href="#"><i class="${footer_icons.icon2}"></i></a></li>
+          <li><a href="#"><i class="${footer_icons.icon3}"></i></a></li>`;
+          document.write(data)
+          </script>
+          
         </ul>
       </div>
 
