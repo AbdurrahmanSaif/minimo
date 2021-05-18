@@ -45,7 +45,7 @@ function getPhotodiaryData() {
 function getBlogSecData() {
   return [
     {
-      blog_img: "images/blog-img1.jpg",
+      blog_img: "images/blog-img2.jpg",
       about: "Lifestyle",
       heading: "More than just a music festival",
       paragraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`,

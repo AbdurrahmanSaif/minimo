@@ -16,7 +16,7 @@
   
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-  <script src="js/json.js"></script>
+  <script src="js/script.js"></script>
 
 </head>
 
@@ -27,56 +27,29 @@
   <header>
     <div class="container2">
 
-      <div class="logo-sec">
-        <script>
-          var logo = getLogoData();
-          var data = `<a href="${logo.url}"><img src="${logo.image}" alt="" class="img-responsive"></a>`;
-          document.write(data);
-        </script>
+      <div class="logo-sec" id="company-logo">
+       <!-- logo data will come here from the api -->
       </div>
-
       <div class="nav-sec">
-        <ul>
-          <script>
-            var nav = getNavData();
-            var data = nav.map((navData) => {
-              return `<li><a href="#">${navData.name}</a></li>`
-            });
-            document.write(data.join(""));
-          </script>
+        <ul id="menus">
+       <!-- logo data will come here from the api -->
         </ul>
       </div>
-
       <div class="clearfix"></div>
     </div>
-
   </header>
-
 
   <section id="contents">
     <div class="banner-sec">
-      <div class="container2">
-        <script>
-          var banner = getBannerData();
-          var data = `<img src="${banner.banner_img}" alt="" class="img-responsive">`;
-          document.write(data);
-        </script>
+      <div class="container2" id="banner-img">
+       <!-- banner-img will come here from the api -->
       </div>
     </div>
 
 
     <div class="photodiary-sec">
-      <div class="container">
-        <script>
-          var photodiary = getPhotodiaryData();
-          var data = `<h4>${photodiary.about}</h4>
-                      <h2>${photodiary.heading}</h2>
-                      <div class="pd-sec-text">
-                        <p>${photodiary.paragraph}</p>
-                      </div>
-                      <h4>${photodiary.message}</h4>`;
-          document.write(data)
-        </script>
+      <div class="container" id= "photodiary-data">
+       <!-- photodiary-sec will come here from the api -->
       </div>
       <!-- container -->
     </div>
@@ -85,25 +58,11 @@
 
     <div class="blog-sec">
       <div class="container">
-        <ul>
-          <script>
-            var blog_sec = getBlogSecData();
-            var data = blog_sec.map((blogSecData) => {
-              return `<li class="blog-sec-li-margin">
-                        <div class="blog-img">
-                          <img src="${blogSecData.blog_img}" alt="" class="img-responsive">
-                        </div>
-                        <h4>${blogSecData.about}</h4>
-                        <h2>${blogSecData.heading}</h2>
-                        <p>${blogSecData.paragraph}</p>
-                      </li>`
-            });
-            document.write(data.join(""));
-          </script>
+        <ul id="my-blog">
+       <!-- blog will come here from the api -->
         </ul>
 
         <div class="clearfix"></div>
-
       </div>
       <!-- container  -->
     </div>
@@ -112,11 +71,8 @@
 
     <div class="newsletter-sec">
       <div class="container">
-        <h2>
-          <script>
-            var news_ltr = getNewsData();
-            document.write(news_ltr);
-          </script>
+        <h2 id="newsletter-heading">
+       <!-- newsletter heading will come here from the api -->
         </h2>
         <div class="newsletter-form">
           <div class="block">
@@ -132,29 +88,12 @@
 
     <div class="blog-sec blog-sec2">
       <div class="container">
-        <ul>
-          <script>
-            var blog_sec2 = getBlogSec2Data();
-            var data = blog_sec2.map((blogSecData) => {
-              return `<li class="blog-sec-li-margin">
-                                  <div class="blog-img">
-                                    <img src="${blogSecData.blog_img}" alt="" class="img-responsive">
-                                  </div>
-                                  <h4>${blogSecData.about}</h4>
-                                  <h2>${blogSecData.heading}</h2>
-                                  <p>${blogSecData.paragraph}</p>
-                                </li>`
-            });
-            document.write(data.join(""));
-          </script>
+        <ul id="my-blog2">
+       <!-- data will come here from the api -->
         </ul>
 
-        <div class="loadmore-btn">
-          <script>
-            var load_btn = getLoadBtnData();
-            var data = `<a href="${load_btn.url}">${load_btn.btnName}</a>`;
-            document.write(data);
-          </script>
+        <div class="loadmore-btn" id="load-btn">
+       <!-- btn data will come here from the api -->
         </div>
         <!-- loadmore-btn  -->
 
@@ -170,34 +109,22 @@
     <div class="container">
 
       <div class="footer-links">
-        <ul>
-          <script>
-            var copyright = getCopyrightData();
-            var data = copyright.map((copyrightData) =>{
-              return `<li><a href="${copyrightData.url}">${copyrightData.name}</a></li>`;
-            });
-                document.write(data.join(""));
-          </script>
-          
+        <ul id="copyright-data">
+       <!-- copyright data will come here from the api -->
         </ul>
       </div>
 
-
       <div class="footer-social">
-        <ul>
-          <script>
-            var footer_icons = getSocialIconsData();
-            var data = `<li>${footer_icons.heading}</li>
-          <li><a href="#"><i class="${footer_icons.icon1}"></i></a></li>
-          <li><a href="#"><i class="${footer_icons.icon2}"></i></a></li>
-          <li><a href="#"><i class="${footer_icons.icon3}"></i></a></li>`;
-          document.write(data)
-          </script>
+        <ul id="social-icons">
+       <!-- footer data will come here from the api -->
+          
         </ul>
       </div>
     </div>
     <!-- container  -->
   </footer>
+  <script src="js/api-call.js"></script>
+
 </body>
 
 </html>
