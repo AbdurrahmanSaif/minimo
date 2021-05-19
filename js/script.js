@@ -1,44 +1,53 @@
-function getLogoData() {
+let apiUrl = "http://localhost:3000";
+
+async function getLogoData() {
+  let response = await axios.get(`${apiUrl}/logo`);
+  let data = response.data;
   return {
-    image: "images/logo.png",
-    url: "index.html",
+    image: data.img,
+    url: data.url,
   };
 }
 
-function getNavData() {
+async function getNavData() {
+  let response = await axios.get(`${apiUrl}/menus`);
+  let data = response.data;
   return [
     {
-      name: "Lifestyle",
-      url: "#",
+      name: "data[0].name",
+      url: "data[0].url",
     },
     {
-      name: "Photodiary",
-      url: "#",
+      name: "data[1].name",
+      url: "data[1].url",
     },
     {
-      name: "Music",
-      url: "#",
+      name: "data[2].name",
+      url: "data[2].url",
     },
     {
-      name: "Travel",
-      url: "#",
+      name: "data[3].name",
+      url: "data[3].url",
     },
   ];
 }
 
-function getBannerData() {
+async function getBannerData() {
+  let response = await axios.get(`${apiUrl}/banner_data`);
+  let data = response.data;
   return {
-    banner_img: "images/banner1.jpg",
+    banner_img: data.banner_img,
   };
 }
 
-function getPhotodiaryData() {
+async function getPhotodiaryData() {
+  let response = await axios.get(`${apiUrl}/photodairy`);
+  let data = response.data;
   return {
-    about: "Photodiary",
-    heading: "The perfect weekend getaway",
-    paragraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
-            omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequ nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.`,
-    message: "Leave a comment",
+    about: data.about,
+    heading: data.heading,
+    paragraph: data.paragraph,
+    message: data.message,
   };
 }
 

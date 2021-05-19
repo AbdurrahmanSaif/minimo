@@ -1,29 +1,43 @@
+
 //company logo data
-var logo = getLogoData();
-var data = `<a href="${logo.url}"><img src="${logo.image}" alt="" class="img-responsive"></a>`;
-document.getElementById("company-logo").innerHTML = data;
+getLogoData().then((data) =>{
+  document.getElementById(
+    "company-logo"
+  ).innerHTML = `<a href="${data.url}"><img src="${data.image}" alt="" class="img-responsive"></a>`;
+});
+
 
 //menus data
-var nav = getNavData();
-var data = nav.map((navData) => {
-  return `<li><a href="#">${navData.name}</a></li>`;
-});
-document.getElementById("menus").innerHTML = data.join("");
+getNavData().then((menuData) =>{
+  document.getElementById(
+    "menus"
+  ).innerHTML = `<li><a href="${menuData.url}">${menuData.name}</a></li>`;
+})
+// var data = nav.map((navData) => {
+//   return `<li><a href="#">${navData.name}</a></li>`;
+// });
+// document.getElementById("menus").innerHTML = data.join("");
+
+
 
 //banner image data
-var banner = getBannerData();
-var data = `<img src="${banner.banner_img}" alt="" class="img-responsive">`;
-document.getElementById("banner-img").innerHTML = data;
+getBannerData().then((data)=>{
+document.getElementById(
+  "banner-img"
+).innerHTML = `<img src="${data.banner_img}" alt="" class="img-responsive">`;
+});
 
 //photodiary data
-var photodiary = getPhotodiaryData();
-var data = `<h4>${photodiary.about}</h4>
-  <h2>${photodiary.heading}</h2>
+photodiary = getPhotodiaryData().then((data) =>{
+  document.getElementById(
+    "photodiary-data"
+  ).innerHTML = `<h4>${data.about}</h4>
+  <h2>${data.heading}</h2>
   <div class="pd-sec-text">
-    <p>${photodiary.paragraph}</p>
+    <p>${data.paragraph}</p>
   </div>
-  <h4>${photodiary.message}</h4>`;
-document.getElementById("photodiary-data").innerHTML = data;
+  <h4>${data.message}</h4>`;
+});
 
 //blog sec data
 var blog_sec = getBlogSecData();
