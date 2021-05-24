@@ -14,20 +14,20 @@ async function getNavData() {
   let data = response.data;
   return [
     {
-      name: "data[0].name",
-      url: "data[0].url",
+      name: data[0].name,
+      url: data[0].url,
     },
     {
-      name: "data[1].name",
-      url: "data[1].url",
+      name: data[1].name,
+      url: data[1].url,
     },
     {
-      name: "data[2].name",
-      url: "data[2].url",
+      name: data[2].name,
+      url: data[2].url,
     },
     {
-      name: "data[3].name",
-      url: "data[3].url",
+      name: data[3].name,
+      url: data[3].url,
     },
   ];
 }
@@ -51,77 +51,88 @@ async function getPhotodiaryData() {
   };
 }
 
-function getBlogSecData() {
+async function getBlogSecData() {
+  let response = await axios.get(`${apiUrl}/blog_sec_data`);
+  let data = response.data;
   return [
     {
-      blog_img: "images/blog-img2.jpg",
-      about: "Lifestyle",
-      heading: "More than just a music festival",
-      paragraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`,
+      blog_img: data[0].blog_img,
+      about: data[0].about,
+      heading: data[0].heading,
+      paragraph:data[0].paragraph,
     },
     {
-      blog_img: "images/blog-img2.jpg",
-      about: "Lifestyle",
-      heading: "Life tastes better with coffee",
-      paragraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`,
+      blog_img: data[1].blog_img,
+      about: data[1].about,
+      heading: data[1].heading,
+      paragraph:data[1].paragraph,
     },
     {
-      blog_img: "images/blog-img3.jpg",
-      about: "Lifestyle",
-      heading: "American dream",
-      paragraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`,
+      blog_img: data[2].blog_img,
+      about: data[2].about,
+      heading: data[2].heading,
+      paragraph:data[2].paragraph,
     },
     {
-      blog_img: "images/blog-img4.jpg",
-      about: "Lifestyle",
-      heading: "A day exploring the Alps",
-      paragraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`,
-    },
+      blog_img: data[3].blog_img,
+      about: data[3].about,
+      heading: data[3].heading,
+      paragraph:data[3].paragraph,
+    }
   ];
 }
 
-function getNewsData() {
-  return "Sign up for our newsletter!";
+async function getNewsData() {
+  let response = await axios.get(`${apiUrl}/newsletter`);
+  let data = response.data;
+  return {heading: data.heading};
 }
 
-function getBlogSec2Data() {
+async function getBlogSec2Data() {
+  let response = await axios.get(`${apiUrl}/blog_sec_data2`);
+  let data = response.data;
   return [
     {
-      blog_img: "images/blog-img1.jpg",
-      about: "Lifestyle",
-      heading: "More than just a music festival",
-      paragraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`,
+      blog_img: data[0].blog_img,
+      about: data[0].about,
+      heading: data[0].heading,
+      paragraph: data[0].paragraph,
     },
     {
-      blog_img: "images/blog-img2.jpg",
-      about: "Lifestyle",
-      heading: "Life tastes better with coffee",
-      paragraph: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea`,
-    },
+      blog_img: data[1].blog_img,
+      about: data[1].about,
+      heading: data[1].heading,
+      paragraph: data[1].paragraph,
+    }
   ];
 }
 
-function getLoadBtnData() {
+async function getLoadBtnData() {
+  let response = await axios.get(`${apiUrl}/blog_sec_button`);
+  let data = response.data;
   return {
-    btnName: "Load more",
-    url: "index.html",
+    name: data.name,
+    name: data.name
   };
 }
 
-function getCopyrightData(){
+async function getCopyrightData(){
+  let response = await axios.get(`${apiUrl}/copyright`);
+  let data = response.data;
   return [
     {
-      name: "Terms & Conditions",
-      url: "#",
+      name: data[0].name,
+      url: data[0].url,
     },
     {
-      name: "Policy",
-      url: "#",
+      name: data[1].name,
+      url: data[1].url,
     },
   ];
 }
 
-function getSocialIconsData(){
+async function getSocialIconsData(){
+  let response = await axios.get(`${apiUrl}/social_icons`)
   return {
     heading: "Follow",
     icon1: "fab fa-facebook-f",
