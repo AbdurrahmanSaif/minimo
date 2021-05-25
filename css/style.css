@@ -174,7 +174,6 @@ p {
     background: url(../images/send-icon.png);
     width: 32px;
     height: 19px;
-    /* border: 1px solid red; */
     cursor: pointer;
     position: absolute;
     right: 10px;

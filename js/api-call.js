@@ -1,38 +1,101 @@
 //company logo data
-getLogoData().then((data) => {
+getData("logo").then((response) => {
+  let data = response.data;
+  let newData = {
+    image: data.img,
+    url: data.url,
+  };
   document.getElementById(
     "company-logo"
-  ).innerHTML = `<a href="${data.url}"><img src="${data.image}" alt="" class="img-responsive"></a>`;
+  ).innerHTML = `<a href="${newData.url}"><img src="${newData.image}" alt="" class="img-responsive"></a>`;
 });
 
 //menus data
-getNavData().then((menuData) => {
-  let newData = menuData.map(
-    (d) => `<li><a href="${d.url}">${d.name}</a></li>`
-  );
-  document.getElementById("menus").innerHTML = newData.join("");
+getData("menus").then((response) => {
+  let data = response.data;
+  let newData = [
+    {
+      name: data[0].name,
+      url: data[0].url,
+    },
+    {
+      name: data[1].name,
+      url: data[1].url,
+    },
+    {
+      name: data[2].name,
+      url: data[2].url,
+    },
+    {
+      name: data[3].name,
+      url: data[3].url,
+    },
+  ];
+  let all_li = newData.map((d) => `<li><a href="${d.url}">${d.name}</a></li>`);
+  document.getElementById("menus").innerHTML = all_li.join("");
 });
 
 //banner image data
-getBannerData().then((data) => {
+getData("banner_data").then((response) => {
+  let data = response.data;
+  let newData = {
+    banner_img: data.banner_img,
+  };
   document.getElementById(
     "banner-img"
-  ).innerHTML = `<img src="${data.banner_img}" alt="" class="img-responsive">`;
+  ).innerHTML = `<img src="${newData.banner_img}" alt="" class="img-responsive">`;
 });
 
 //photodiary data
-photodiary = getPhotodiaryData().then((data) => {
-  document.getElementById("photodiary-data").innerHTML = `<h4>${data.about}</h4>
-  <h2>${data.heading}</h2>
+getData("photodairy").then((response) => {
+  let data = response.data;
+  let newData = {
+    about: data.about,
+    heading: data.heading,
+    paragraph: data.paragraph,
+    message: data.message,
+  };
+  document.getElementById(
+    "photodiary-data"
+  ).innerHTML = `<h4>${newData.about}</h4>
+  <h2>${newData.heading}</h2>
   <div class="pd-sec-text">
-    <p>${data.paragraph}</p>
+    <p>${newData.paragraph}</p>
   </div>
-  <h4>${data.message}</h4>`;
+  <h4>${newData.message}</h4>`;
 });
 
 //blog sec data
-getBlogSecData().then((data) => {
-  let newData = data.map(
+
+getData("blog_sec_data").then((response) => {
+  let data = response.data;
+  let newData = [
+    {
+      blog_img: data[0].blog_img,
+      about: data[0].about,
+      heading: data[0].heading,
+      paragraph: data[0].paragraph,
+    },
+    {
+      blog_img: data[1].blog_img,
+      about: data[1].about,
+      heading: data[1].heading,
+      paragraph: data[1].paragraph,
+    },
+    {
+      blog_img: data[2].blog_img,
+      about: data[2].about,
+      heading: data[2].heading,
+      paragraph: data[2].paragraph,
+    },
+    {
+      blog_img: data[3].blog_img,
+      about: data[3].about,
+      heading: data[3].heading,
+      paragraph: data[3].paragraph,
+    },
+  ];
+  let all_li = data.map(
     (d) => `<li class="blog-sec-li-margin">
   <div class="blog-img">
     <img src="${d.blog_img}" alt="" class="img-responsive">
@@ -42,18 +105,34 @@ getBlogSecData().then((data) => {
   <p>${d.paragraph}</p>
 </li>`
   );
-  document.getElementById("my-blog").innerHTML = newData.join("");
+  document.getElementById("my-blog").innerHTML = all_li.join("");
 });
 
-
 //news letter data
-getNewsData().then((data) => {
-  document.getElementById("newsletter-heading").innerHTML = data.heading;
+getData("newsletter").then((response) => {
+  let data = response.data;
+  let newData = { heading: data.heading };
+  document.getElementById("newsletter-heading").innerHTML = newData.heading;
 });
 
 //blog-sec2 data
-getBlogSec2Data().then((data) => {
-  let newData = data.map(
+getData("blog_sec_data2").then((response) =>{
+  let data = response.data;
+  let newData = [
+    {
+      blog_img: data[0].blog_img,
+      about: data[0].about,
+      heading: data[0].heading,
+      paragraph: data[0].paragraph,
+    },
+    {
+      blog_img: data[1].blog_img,
+      about: data[1].about,
+      heading: data[1].heading,
+      paragraph: data[1].paragraph,
+    }
+  ];
+  let all_li = newData.map(
     (d) => `<li class="blog-sec-li-margin">
   <div class="blog-img">
     <img src="${d.blog_img}" alt="" class="img-responsive">
@@ -63,43 +142,64 @@ getBlogSec2Data().then((data) => {
   <p>${d.paragraph}</p>
 </li>`
   );
-  document.getElementById("my-blog2").innerHTML = newData.join("");
-});
-
+  document.getElementById("my-blog2").innerHTML = all_li.join("");
+})
+ 
 //load btn data
-getLoadBtnData().then((data) => {
+getData("blog_sec_button").then((response) => {
+  let data = response.data;
+  let newData = {
+    name: data.name,
+    name: data.name
+  };
   document.getElementById("load-btn").innerHTML = `
-  <a href="${data.url}">${data.name}</a>`;
-});
+  <a href="${newData.url}">${newData.name}</a>`;
+})
 
 //footer copyright data
-getCopyrightData().then((data) => {
-  console.log(data)
-  let newData = data.map((d) => `<li><a href="${d.url}">${d.name}</a></li>`)
-  document.getElementById(
-    "copyright-data"
-  ).innerHTML =  newData.join("");
-});
+getData("copyright").then((response) =>{
+  let data = response.data;
+  let newData = [
+    {
+      name: data[0].name,
+      url: data[0].url,
+    },
+    {
+      name: data[1].name,
+      url: data[1].url,
+    },
+  ];
 
+  let all_li = newData.map((d) => `<li><a href="${d.url}">${d.name}</a></li>`);
+  document.getElementById("copyright-data").innerHTML = all_li.join("");
+})
 
 //footer social-icons data
-getSocialIconsData().then((data) => {
+getData("social_icons").then((response) => {
+  let data = response.data;
+  let newData =  {
+    heading: "Follow",
+    icon1: "fab fa-facebook-f",
+    icon2: "fab fa-twitter",
+    icon3: "fab fa-instagram",
+  };
   document.getElementById("social-icons").innerHTML = `
-  <li>${data.heading}</li>
+  <li>${newData.heading}</li>
   <li>
     <a href="#">
-      <i class="${data.icon1}"></i>
+      <i class="${newData.icon1}"></i>
     </a>
   </li>
   <li>
     <a href="#">
-      <i class="${data.icon2}"></i>
+      <i class="${newData.icon2}"></i>
     </a>
   </li>
   <li>
     <a href="#">
-      <i class="${data.icon3}"></i>
+      <i class="${newData.icon3}"></i>
     </a>
   </li>
   `;
-});
+})
+
